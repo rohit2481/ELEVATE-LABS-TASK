@@ -1,0 +1,17 @@
+# Nmap 7.94SVN scan initiated Mon Jun 29 12:33:18 2026 as: /usr/lib/nmap/nmap -sS -o ip_and_their_port.html 192.168.1.0/24
+Nmap scan report for 192.168.1.1
+Host is up (0.0072s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+80/tcp   open  http
+5431/tcp open  park-agent
+
+Nmap scan report for 192.168.1.110
+Host is up (0.0080s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+1900/tcp open  upnp
+
+# Nmap done at Mon Jun 29 12:33:26 2026 -- 256 IP addresses (2 hosts up) scanned in 8.96 seconds

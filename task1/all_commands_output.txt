@@ -1,0 +1,100 @@
+┌──(kali㉿kali)-[~/Desktop/task1]
+└─$ sudo su         
+┌──(root㉿kali)-[/home/kali/Desktop/task1]
+└─# ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: eth0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether 74:56:3c:2d:2a:b3 brd ff:ff:ff:ff:ff:ff
+4: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 3c:52:a1:37:79:86 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.111/24 brd 192.168.0.255 scope global dynamic noprefixroute wlan0
+       valid_lft 7095sec preferred_lft 7095sec
+    inet6 fe80::16a1:e76b:da5e:4ed0/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+                                                                                                                                                                                                                                           
+┌──(root㉿kali)-[/home/kali/Desktop/task1]
+└─# nmap -sn 192.168.1.0/24
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-06-29 12:29 UTC
+Nmap scan report for 192.168.1.1
+Host is up (0.0038s latency).
+Nmap scan report for 192.168.1.110
+Host is up (0.0079s latency).
+Nmap done: 256 IP addresses (2 hosts up) scanned in 8.90 seconds
+                                                                                                                                                                                                                                           
+┌──(root㉿kali)-[/home/kali/Desktop/task1]
+└─# nmap -sS 192.168.1.0/24
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-06-29 12:30 UTC
+Nmap scan report for 192.168.1.1
+Host is up (0.023s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+80/tcp   open  http
+5431/tcp open  park-agent
+
+Nmap scan report for 192.168.1.110
+Host is up (0.016s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+1900/tcp open  upnp
+
+Nmap done: 256 IP addresses (2 hosts up) scanned in 16.33 seconds
+                                                                                                                                                                                                                                           
+┌──(root㉿kali)-[/home/kali/Desktop/task1]
+└─# nmap -sS 192.168.1.0/24 -o ip_and_their_port.html
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2026-06-29 12:33 UTC
+Nmap scan report for 192.168.1.1
+Host is up (0.0072s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+80/tcp   open  http
+5431/tcp open  park-agent
+
+Nmap scan report for 192.168.1.110
+Host is up (0.0080s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+1900/tcp open  upnp
+
+Nmap done: 256 IP addresses (2 hosts up) scanned in 8.96 seconds
+                                                                                                                                                                                                                                            
+┌──(root㉿kali)-[/home/kali/Desktop/task1]
+└─# ls
+ip_and_their_port.html
+                                                                                                                                                                                                                                            
+┌──(root㉿kali)-[/home/kali/Desktop/task1]
+└─# cat ip_and_their_port.html 
+# Nmap 7.94SVN scan initiated Mon Jun 29 12:33:18 2026 as: /usr/lib/nmap/nmap -sS -o ip_and_their_port.html 192.168.1.0/24
+Nmap scan report for 192.168.1.1
+Host is up (0.0072s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+80/tcp   open  http
+5431/tcp open  park-agent
+
+Nmap scan report for 192.168.1.110
+Host is up (0.0080s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+1900/tcp open  upnp
+
+# Nmap done at Mon Jun 29 12:33:26 2026 -- 256 IP addresses (2 hosts up) scanned in 8.96 seconds
+                                                                                                                                                                                                                                            
+┌──(root㉿kali)-[/home/kali/Desktop/task1]
+└─# history
+    1  ip a
+    2  nmap -sn 192.168.1.0/24
+    3  nmap -sS 192.168.1.0/24
+    4  nmap -sS 192.168.1.0/24 -o ip_and_their_port.html
+    5  ls
+    6  cat ip_and_their_port.html
