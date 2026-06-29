@@ -14,6 +14,6 @@ history ---> used to see command history
     1  ip a
     2  nmap -sn 192.168.1.0/24
     3  nmap -sS 192.168.1.0/24
-    4  nmap -sS 192.168.1.0/24 -o ip_and_their_port.html
+    4  nmap -sS 192.168.1.0/24 -o ip_and_their_port.txt
     5  ls
-    6  cat ip_and_their_port.html
+    6  cat ip_and_their_port.txt
