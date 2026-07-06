@@ -1,0 +1,5 @@
+******************* commands *************************
+
+sudo wireshark -----> to run wireshark with cli
+ping -c 4 www.elevatelabs.biz ----> to check network connectivity (-c flag for to define number of packet or  stop after <count> replies)
+nmap www.elevatelabs.biz   ----> basic netwrok scanning of target site
